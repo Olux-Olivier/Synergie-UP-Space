@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --couleur1: #A27F00;
-            --couleur2: #664F0B;
-            --couleur3: #F2B84C;
+            --couleur1: #004A63;
+            --couleur2: #004A63;
+            --couleur3: #F1BC54;
             --couleur4: #FFE6EA;
         }
 
@@ -66,10 +70,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'synergie-primary': '#A27F00',
-                        'synergie-secondary': '#664F0B',
-                        'synergie-accent': '#F2B84C',
-                        'synergie-light': '#FFE6EA',
+                        'synergie-primary': '#F1BC54',
+                        'synergie-secondary': '#004A63',
+                        'synergie-accent': '#F1BC54',
+                        'synergie-light': '#004A63',
                     },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
@@ -95,12 +99,12 @@
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
                 <a href="#accueil" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-synergie-primary rounded-full flex items-center justify-center">
-                        <i class="fas fa-synergy text-white"></i>
+                    <div class="w-10 h-10  overflow-hidden flex items-center justify-center">
+                        <img src="{{ asset('assets/imgs/synergie-up-logo.png') }}" alt="Logo Synergie UP" class="w-full h-full object-cover">
                     </div>
-                    <div>
-                        <span class="text-2xl font-black text-synergie-secondary">SYNERGIE</span>
-                        <span class="text-2xl font-black text-synergie-primary">UP</span>
+                   <div>
+                        <span class="text-2xl font-black text-synergie-secondary font-exo2">SYNERGIE</span>
+                        <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
                     </div>
                 </a>
 
@@ -172,7 +176,7 @@
             <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
                  alt="Hero Background"
                  class="w-full h-full object-cover">
-        </div>
+                </div>
 
         <div class="container mx-auto px-4 z-20 text-center">
             <div class="animate-fadeInUp">
@@ -187,7 +191,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#services"
-                       class="bg-synergie-primary hover:bg-transparent border-2 border-synergie-primary text-white hover:text-synergie-primary px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                       class="bg-synergie-secondary hover:bg-transparent hover:border-white border-2 border-synergie-secondary text-white  px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                         Découvrir nos services
                     </a>
                     <a href="#contact"
@@ -718,15 +722,15 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Logo et description -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-synergie-accent rounded-full flex items-center justify-center">
-                            <i class="fas fa-synergy text-synergie-secondary"></i>
-                        </div>
-                        <div>
-                            <span class="text-2xl font-black">SYNERGIE</span>
-                            <span class="text-2xl font-black text-synergie-accent">UP</span>
-                        </div>
+                    <a href="#accueil" class="flex items-center space-x-2">
+                    <div class="w-10 h-10  overflow-hidden flex items-center justify-center">
+                        <img src="{{ asset('assets/imgs/synergie-up-logo.png') }}" alt="Logo Synergie UP" class="w-full h-full object-cover">
                     </div>
+                   <div>
+                        <span class="text-2xl font-black text-white font-exo2">SYNERGIE</span>
+                        <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
+                    </div>
+                </a>
                     <p class="text-gray-300 mb-6">
                         Votre partenaire de confiance pour des solutions de communication et d'événementiel innovantes.
                     </p>
