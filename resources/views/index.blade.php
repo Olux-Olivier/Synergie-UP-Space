@@ -723,9 +723,7 @@
                 <!-- Logo et description -->
                 <div>
                     <a href="#accueil" class="flex items-center space-x-2">
-                    <div class="w-10 h-10  overflow-hidden flex items-center justify-center">
-                        <img src="{{ asset('assets/imgs/synergie-up-logo.png') }}" alt="Logo Synergie UP" class="w-full h-full object-cover">
-                    </div>
+                    
                    <div>
                         <span class="text-2xl font-black text-white font-exo2">SYNERGIE</span>
                         <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
