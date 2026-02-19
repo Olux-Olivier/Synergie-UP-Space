@@ -192,7 +192,7 @@
         <div class="container mx-auto px-4 z-20 text-center">
             <div class="animate-fadeInUp">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-title text-white mb-6">
-                    Synergie <span class="text-synergie-accent ">up</span>
+                    Synergie <span class="text-synergie-accent font-title">up</span>
                 </h1>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">
                     Communication & Événementiel
@@ -736,8 +736,8 @@
                     <a href="#accueil" class="flex items-center space-x-2">
 
                    <div>
-                        <span class="text-2xl font-black text-white font-exo2">SYNERGIE</span>
-                        <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
+                        <span class="text-2xl font-black text-white font-title">Synergie</span>
+                        <span class="text-2xl font-black text-synergie-primary font-title">up</span>
                     </div>
                 </a>
                     <p class="text-gray-300 mb-6">
