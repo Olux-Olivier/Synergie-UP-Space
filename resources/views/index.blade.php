@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -28,6 +28,17 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'Broaek';
+            src: url('/fonts/Broaek-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .font-title {
+            font-family: 'Broaek', sans-serif;
         }
 
         /* Custom animations */
@@ -103,8 +114,8 @@
                         <img src="{{ asset('assets/imgs/synergie-up-logo.png') }}" alt="Logo Synergie UP" class="w-full h-full object-cover">
                     </div>
                    <div>
-                        <span class="text-2xl font-black text-synergie-secondary font-exo2">SYNERGIE</span>
-                        <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
+                        <span class="text-2xl font-black text-synergie-secondary font-title">Synergie</span>
+                        <span class="text-2xl font-black text-synergie-primary font-title">up</span>
                     </div>
                 </a>
 
@@ -180,8 +191,8 @@
 
         <div class="container mx-auto px-4 z-20 text-center">
             <div class="animate-fadeInUp">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6">
-                    SYNERGIE <span class="text-synergie-accent">UP</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-title text-white mb-6">
+                    Synergie <span class="text-synergie-accent ">up</span>
                 </h1>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">
                     Communication & Événementiel
@@ -215,7 +226,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
-                    À <span class="text-synergie-primary">Propos</span>
+                    À <span class="text-synergie-primary ">Propos</span>
                 </h2>
                 <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -723,7 +734,7 @@
                 <!-- Logo et description -->
                 <div>
                     <a href="#accueil" class="flex items-center space-x-2">
-                    
+
                    <div>
                         <span class="text-2xl font-black text-white font-exo2">SYNERGIE</span>
                         <span class="text-2xl font-black text-synergie-primary font-exo2">UP</span>
@@ -733,10 +744,10 @@
                         Votre partenaire de confiance pour des solutions de communication et d'événementiel innovantes.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                        <a href="https://web.facebook.com/Synergieupofficiel" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                        <a href="https://www.instagram.com/synergie_up?fbclid=IwY2xjawQD381leHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeG5-eC2wcHja6rKZcY_ja295A0it0tChtj9GOURnfv4RdWdgeIhXbuDW7nBg_aem_k20NCyaLGwOIZTrGnfXCPw" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
