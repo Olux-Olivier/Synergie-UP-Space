@@ -643,9 +643,11 @@
                             <div>
                                 <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent">
                                     <option value="" selected disabled>Type de service</option>
-                                    <option value="communication">Communication</option>
-                                    <option value="evenementiel">Événementiel</option>
-                                    <option value="both">Les deux</option>
+                                    <option value="communication">Communication visuelle</option>
+                                    <option value="developpement">Développement d'applications</option>
+                                    <option value="evenementiel">Logistique Événementielle</option>
+                                    <option value="evenementiel">Photographie</option>
+                                    <option value="both">Les quatres services</option>
                                 </select>
                             </div>
                             <div>
@@ -684,7 +686,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-synergie-secondary">Téléphone</h4>
-                                    <p class="text-gray-600">+243 XX XXX XX XX</p>
+                                    <p class="text-gray-600">+243 83 424 90 25 </p>
                                 </div>
                             </div>
 
@@ -695,7 +697,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-synergie-secondary">Email</h4>
-                                    <p class="text-gray-600">contact@synergie-up.com</p>
+                                    <p class="text-gray-600">synergieup@gmail.com</p>
                                 </div>
                             </div>
 
