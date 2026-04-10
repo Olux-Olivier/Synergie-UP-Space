@@ -74,6 +74,257 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--couleur2);
         }
+
+        .navbar-base {
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: blur(0);
+            -webkit-backdrop-filter: blur(0);
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+            border-bottom-left-radius: 1.1rem;
+            border-bottom-right-radius: 1.1rem;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 0.2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--couleur3);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.is-active::after {
+            transform: scaleX(1);
+        }
+
+        .nav-link.is-active {
+            color: var(--couleur3) !important;
+        }
+
+        .section-indicator {
+            width: 84px;
+            height: 6px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--couleur1), var(--couleur3));
+            box-shadow: 0 6px 14px rgba(0, 74, 99, 0.22);
+        }
+
+        .neo-card-light {
+            position: relative;
+            border-radius: 1.1rem;
+            padding-top: 1.1rem;
+            border: 1px solid #dde4ea;
+            background: #f2f4f7;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .neo-card-light:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+        }
+
+        .neo-card-light::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.1rem;
+            width: 5px;
+            height: 62px;
+            border-radius: 999px;
+            background: var(--couleur3);
+            box-shadow: 0 0 10px rgba(241, 188, 84, 0.35);
+        }
+
+        .neo-icon-light {
+            width: 3.4rem;
+            height: 3.4rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid #dbe3e8;
+            margin-bottom: 1rem;
+        }
+
+        .partners-marquee {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .partners-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: partners-scroll 24s linear infinite;
+        }
+
+        .partners-marquee:hover .partners-track {
+            animation-play-state: paused;
+        }
+
+        .partner-pill {
+            min-width: 300px;
+            min-height: 120px;
+        }
+
+        @keyframes partners-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(-50% - 0.5rem));
+            }
+        }
+
+        /* Services section - dark mode using brand blue */
+        #services {
+            background: linear-gradient(160deg, #022c3b 0%, #004a63 45%, #012736 100%);
+            position: relative;
+        }
+
+        #mainFooter {
+            background: linear-gradient(160deg, #022c3b 0%, #004a63 45%, #012736 100%);
+            position: relative;
+        }
+
+        #services::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 15%, rgba(241, 188, 84, 0.1), transparent 32%);
+            pointer-events: none;
+        }
+
+        #services .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #services h2,
+        #services .text-synergie-secondary {
+            color: #f8fbfd !important;
+        }
+
+        #services .text-gray-600 {
+            color: #ffffff !important;
+        }
+
+        #services .w-20.h-1 {
+            background-color: var(--couleur3) !important;
+        }
+
+        #services .inline-flex.rounded-full {
+            background: rgba(255, 255, 255, 0.09) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        #services .tab-button {
+            color: #d6e4ea !important;
+        }
+
+        #services #tabCommunication.bg-synergie-primary,
+        #services #tabEvenementiel.bg-synergie-primary {
+            background-color: var(--couleur3) !important;
+            color: #062b38 !important;
+        }
+
+        #services .tab-button:hover {
+            color: #ffffff !important;
+        }
+
+        #services .bg-white {
+            background: rgba(7, 38, 53, 0.85) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.26);
+        }
+
+        #services .border-l-4 {
+            border-left-width: 0 !important;
+        }
+
+        #services .bg-synergie-light {
+            background-color: rgba(255, 255, 255, 0.12) !important;
+        }
+
+        #services .text-synergie-primary,
+        #services .fa-check {
+            color: var(--couleur3) !important;
+        }
+
+        #services .service-neo-card span {
+            color: #f7fbff;
+        }
+
+        #services .bg-gray-50 {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #eef6fa;
+        }
+
+        #services .service-neo-card {
+            position: relative;
+            border-radius: 1.1rem;
+            overflow: hidden;
+            padding-top: 1.2rem;
+        }
+
+        #services .service-neo-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.1rem;
+            width: 5px;
+            height: 64px;
+            border-radius: 999px;
+            background: var(--couleur3);
+            box-shadow: 0 0 12px rgba(241, 188, 84, 0.45);
+        }
+
+        #services .service-neo-card .service-icon {
+            width: 3.4rem;
+            height: 3.4rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            margin-bottom: 1rem;
+        }
+
+        #services .service-neo-card h3 {
+            color: #ffffff !important;
+        }
+
+        #services .service-neo-card p,
+        #services .service-neo-card .text-gray-600 {
+            color: #d0e0e8 !important;
+        }
+
     </style>
     <!-- Tailwind Configuration -->
     <script>
@@ -105,7 +356,7 @@
 </head>
 <body class="font-poppins">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 navbar-base">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
@@ -121,29 +372,23 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#accueil" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#accueil" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         Accueil
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#apropos" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#apropos" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         À Propos
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#services" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#services" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         Services
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#realisations" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#realisations" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         Réalisations
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#partenaires" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#partenaires" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         Partenaires
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#contact" class="font-semibold text-synergie-secondary hover:text-synergie-primary transition-colors duration-300 relative group">
+                    <a href="#contact" class="nav-link font-semibold text-white hover:text-synergie-primary transition-colors duration-300">
                         Contact
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-synergie-primary group-hover:w-full transition-all duration-300"></span>
                     </a>
                 </div>
 
@@ -198,16 +443,17 @@
                     Communication & Événementiel
                 </h2>
                 <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
-                    Nous créons l'image, nous produisons l'impact. Votre partenaire pour des solutions créatives et innovantes à Lubumbashi.
+                    Nous aidons les marques et entreprises de Lubumbashi à gagner en visibilité
+                    et en impact avec des solutions créatives et événementielles sur mesure.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#services"
                        class="bg-synergie-secondary hover:bg-transparent hover:border-white border-2 border-synergie-secondary text-white  px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                        Découvrir nos services
+                        Demander un devis
                     </a>
                     <a href="#contact"
                        class="bg-transparent hover:bg-synergie-accent border-2 border-synergie-accent text-synergie-accent hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                        Nous contacter
+                        Planifier un échange
                     </a>
                 </div>
             </div>
@@ -221,6 +467,85 @@
         </div>
     </section>
 
+    <!-- Preuves -->
+    <section id="preuves" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-6 mb-10">
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-synergie-secondary">50+</p>
+                    <p class="text-gray-600 mt-2">projets livrés</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-synergie-secondary">30+</p>
+                    <p class="text-gray-600 mt-2">clients accompagnés</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-synergie-secondary">98%</p>
+                    <p class="text-gray-600 mt-2">clients satisfaits</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-synergie-secondary">2 ans +</p>
+                    <p class="text-gray-600 mt-2">d'expérience terrain</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Processus -->
+    <section id="processus" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
+                    Notre <span class="text-synergie-primary">Processus</span>
+                </h2>
+                <div class="section-indicator mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Une méthode claire en 4 étapes pour transformer vos idées en résultats concrets.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-synergie-light/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-synergie-primary"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-synergie-primary mb-1">01</p>
+                    <h3 class="text-lg font-bold text-synergie-secondary mb-2">Brief & Diagnostic</h3>
+                    <p class="text-gray-600 text-sm">Nous analysons vos objectifs, votre audience et vos contraintes.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-synergie-light/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-pen-ruler text-synergie-primary"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-synergie-primary mb-1">02</p>
+                    <h3 class="text-lg font-bold text-synergie-secondary mb-2">Concept créatif</h3>
+                    <p class="text-gray-600 text-sm">Nous construisons une direction visuelle et un plan d'action précis.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-synergie-light/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-gears text-synergie-primary"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-synergie-primary mb-1">03</p>
+                    <h3 class="text-lg font-bold text-synergie-secondary mb-2">Production</h3>
+                    <p class="text-gray-600 text-sm">Nous exécutons avec rigueur : design, contenu et logistique.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-12 h-12 rounded-full bg-synergie-light/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-simple text-synergie-primary"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-synergie-primary mb-1">04</p>
+                    <h3 class="text-lg font-bold text-synergie-secondary mb-2">Livraison & Suivi</h3>
+                    <p class="text-gray-600 text-sm">Nous livrons, mesurons l'impact et optimisons les prochaines actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- À Propos -->
     <section id="apropos" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -228,17 +553,41 @@
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
                     À <span class="text-synergie-primary ">Propos</span>
                 </h2>
-                <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
+                <div class="section-indicator mx-auto mb-8"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Synergie UP est une agence de communication et d'événementiel basée à Lubumbashi,
                     alliant créativité, professionnalisme et innovation pour créer un impact maximal.
                 </p>
             </div>
 
+            <div class="grid lg:grid-cols-2 gap-8 items-center mb-12">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <p class="text-synergie-primary font-semibold mb-3">Notre approche</p>
+                    <h3 class="text-2xl md:text-3xl font-black text-synergie-secondary mb-4">
+                        Une équipe créative orientée résultats
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nous combinons stratégie, design et exécution terrain pour créer des campagnes
+                        et événements qui marquent durablement votre audience.
+                    </p>
+                </div>
+                <div class="relative">
+                    <img
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                        alt="Illustration de l'équipe Synergie UP"
+                        class="w-full h-[320px] object-cover rounded-2xl shadow-xl"
+                    >
+                    <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-md px-4 py-3 border border-gray-100">
+                        <p class="text-sm font-semibold text-synergie-secondary">Communication visuelle</p>
+                        <p class="text-xs text-gray-500">Branding • Production • Événementiel</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Valeur 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-synergie-accent">
-                    <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                <div class="neo-card-light p-8">
+                    <div class="neo-icon-light">
                         <i class="fas fa-lightbulb text-3xl text-synergie-primary"></i>
                     </div>
                     <h3 class="text-xl font-bold text-synergie-secondary mb-4">Créativité</h3>
@@ -248,8 +597,8 @@
                 </div>
 
                 <!-- Valeur 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-synergie-accent">
-                    <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                <div class="neo-card-light p-8">
+                    <div class="neo-icon-light">
                         <i class="fas fa-tasks text-3xl text-synergie-primary"></i>
                     </div>
                     <h3 class="text-xl font-bold text-synergie-secondary mb-4">Rigueur</h3>
@@ -259,8 +608,8 @@
                 </div>
 
                 <!-- Valeur 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-synergie-accent">
-                    <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                <div class="neo-card-light p-8">
+                    <div class="neo-icon-light">
                         <i class="fas fa-bullseye text-3xl text-synergie-primary"></i>
                     </div>
                     <h3 class="text-xl font-bold text-synergie-secondary mb-4">Impact</h3>
@@ -279,7 +628,7 @@
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
                     Nos <span class="text-synergie-primary">Services</span>
                 </h2>
-                <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
+                <div class="section-indicator mx-auto mb-8"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Découvrez notre gamme complète de services adaptés à vos besoins en communication et événementiel.
                 </p>
@@ -303,8 +652,8 @@
             <div id="contentCommunication" class="tab-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service 1 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-palette text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Brand Design</h3>
@@ -314,8 +663,8 @@
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-video text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Motion Design</h3>
@@ -325,8 +674,8 @@
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-hashtag text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Social Media</h3>
@@ -336,8 +685,8 @@
                     </div>
 
                     <!-- Service 4 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-code text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Développement Web</h3>
@@ -347,8 +696,8 @@
                     </div>
 
                     <!-- Service 5 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-chart-line text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Design Consulting</h3>
@@ -358,8 +707,8 @@
                     </div>
 
                     <!-- Service 6 -->
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary">
-                        <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center mb-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-synergie-primary service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-bullhorn text-xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-lg font-bold text-synergie-secondary mb-3">Stratégie Marketing</h3>
@@ -374,8 +723,8 @@
             <div id="contentEvenementiel" class="tab-content hidden">
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Planning -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-calendar-alt text-2xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold text-synergie-secondary mb-4">Planning & Organisation</h3>
@@ -397,8 +746,8 @@
                     </div>
 
                     <!-- Logistique -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-truck text-2xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold text-synergie-secondary mb-4">Logistique</h3>
@@ -409,13 +758,12 @@
                             <div class="bg-gray-50 p-2 rounded text-center">Podium & Scène</div>
                             <div class="bg-gray-50 p-2 rounded text-center">Sonorisation</div>
                             <div class="bg-gray-50 p-2 rounded text-center">Tentes</div>
-                            <div class="bg-gray-50 p-2 rounded text-center">Génie électrique</div>
                         </div>
                     </div>
 
                     <!-- Couverture Média -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mb-6">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 service-neo-card">
+                        <div class="service-icon">
                             <i class="fas fa-camera text-2xl text-synergie-primary"></i>
                         </div>
                         <h3 class="text-xl font-bold text-synergie-secondary mb-4">Couverture Média</h3>
@@ -451,7 +799,7 @@
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
                     Nos <span class="text-synergie-primary">Réalisations</span>
                 </h2>
-                <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
+                <div class="section-indicator mx-auto mb-8"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Découvrez quelques-uns de nos projets réalisés avec passion et professionnalisme.
                 </p>
@@ -538,199 +886,123 @@
             </div>
         </div>
     </section>
-
-    <!-- Partenaires -->
-    <section id="partenaires" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+    <section id="preuves" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+        <!-- Partenaires -->
+        <div class="text-center mb-14">
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
-                    Nos <span class="text-synergie-primary">Partenaires</span>
+                    Nos <span class="text-synergie-primary">partenaires</span>
                 </h2>
-                <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Nous collaborons avec les meilleurs pour vous offrir un service d'exception.
-                </p>
+                <div class="section-indicator mx-auto mb-8"></div>
+                
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                <!-- Partenaire 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center transform hover:-translate-y-2">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-building text-2xl text-synergie-primary"></i>
+                <div class="partners-marquee">
+                    <div class="partners-track">
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-hewa-bora.jpg') }}" alt="Logo Hewa Bora" class="h-28 w-auto object-contain">
                         </div>
-                        <h3 class="font-bold text-synergie-secondary">HEWA BORA</h3>
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-nj-event.jpg') }}" alt="Logo NJ Event" class="h-28 w-auto object-contain">
+                        </div>
+                        
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-katanga-award.jpg') }}" alt="Logo Katanga Award" class="h-28 w-auto object-contain">
+                        </div>
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-congo-virtuose.jpg') }}" alt="Logo Congo Virtuose" class="h-28 w-auto object-contain">
+                        </div>
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-hewa-bora.jpg') }}" alt="Logo Hewa Bora" class="h-28 w-auto object-contain">
+                        </div>
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-nj-event.jpg') }}" alt="Logo NJ Event" class="h-28 w-auto object-contain">
+                        </div>
+                        
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-katanga-award.jpg') }}" alt="Logo Katanga Award" class="h-28 w-auto object-contain">
+                        </div>
+                        <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
+                            <img src="{{ asset('assets/imgs/logo-congo-virtuose.jpg') }}" alt="Logo Congo Virtuose" class="h-28 w-auto object-contain">
+                        </div>
                     </div>
                 </div>
 
-                <!-- Partenaire 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center transform hover:-translate-y-2">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-lightbulb text-2xl text-synergie-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-synergie-secondary">INNOVATION GROUP</h3>
-                    </div>
-                </div>
-
-                <!-- Partenaire 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center transform hover:-translate-y-2">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-calendar text-2xl text-synergie-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-synergie-secondary">LUBUMBASHI EVENTS</h3>
-                    </div>
-                </div>
-
-                <!-- Partenaire 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center transform hover:-translate-y-2">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-paint-brush text-2xl text-synergie-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-synergie-secondary">CREATIVE LAB</h3>
-                    </div>
-                </div>
-
-                <!-- Partenaire 5 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center transform hover:-translate-y-2">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-synergie-light rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-laptop-code text-2xl text-synergie-primary"></i>
-                        </div>
-                        <h3 class="font-bold text-synergie-secondary">DIGITAL CONGO</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+       
+   </div>
+            </section>
     <!-- Contact -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-synergie-light to-white">
+    <section id="contact" class="py-20 bg-gradient-to-br from-synergie-light/10 via-white to-synergie-light/20">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-14">
                 <h2 class="text-3xl md:text-4xl font-black text-synergie-secondary mb-4">
                     Contactez-<span class="text-synergie-primary">nous</span>
                 </h2>
-                <div class="w-20 h-1 bg-synergie-primary mx-auto mb-8"></div>
+                <div class="section-indicator mx-auto mb-8"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Prêt à concrétiser votre projet ? Discutons-en !
+                    Parlez-nous de votre projet, nous revenons vers vous rapidement avec une proposition claire.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Formulaire -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-synergie-secondary text-white rounded-3xl p-8 shadow-2xl">
+                    <p class="text-synergie-primary font-semibold mb-2">Discutons de votre besoin</p>
+                    <h3 class="text-2xl font-extrabold mb-4">Une équipe disponible pour vous accompagner</h3>
+                    <p class="text-white/80 mb-8">Communication visuelle, digital et événementiel : nous vous aidons à passer de l'idée à l'impact.</p>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center"><i class="fas fa-map-marker-alt text-synergie-primary"></i></div>
+                            <div><p class="font-semibold">Adresse</p><p class="text-white/80 text-sm">Lubumbashi, République Démocratique du Congo</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center"><i class="fas fa-phone text-synergie-primary"></i></div>
+                            <div><p class="font-semibold">Téléphone</p><p class="text-white/80 text-sm">+243 83 424 90 25</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center"><i class="fas fa-envelope text-synergie-primary"></i></div>
+                            <div><p class="font-semibold">Email</p><p class="text-white/80 text-sm">synergieup@gmail.com</p></div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/243834249025" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 bg-synergie-primary text-synergie-secondary font-bold px-5 py-3 rounded-full hover:opacity-90 transition-opacity">
+                        <i class="fab fa-whatsapp"></i> WhatsApp direct
+                    </a>
+                </div>
+
+                <div class="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
                     <h3 class="text-2xl font-bold text-synergie-secondary mb-6">Envoyez-nous un message</h3>
-                    <form id="contactForm">
-                        <div class="space-y-4">
-                            <div>
-                                <input type="text"
-                                       placeholder="Votre nom complet"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <input type="email"
-                                       placeholder="Votre adresse email"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <input type="tel"
-                                       placeholder="Votre numéro de téléphone"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent">
-                                    <option value="" selected disabled>Type de service</option>
-                                    <option value="communication">Communication visuelle</option>
-                                    <option value="developpement">Développement d'applications</option>
-                                    <option value="evenementiel">Logistique Événementielle</option>
-                                    <option value="evenementiel">Photographie</option>
-                                    <option value="both">Les quatres services</option>
-                                </select>
-                            </div>
-                            <div>
-                                <textarea placeholder="Décrivez votre projet..."
-                                          rows="5"
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-synergie-primary focus:border-transparent"></textarea>
-                            </div>
-                            <button type="submit"
-                                    class="w-full bg-synergie-primary hover:bg-synergie-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    <form id="contactForm" class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Votre nom complet" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <input type="email" placeholder="Votre adresse email" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="tel" placeholder="Votre numéro de téléphone" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <select class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                                <option value="" selected disabled>Type de service</option>
+                                <option value="communication">Communication visuelle</option>
+                                <option value="developpement">Développement d'applications</option>
+                                <option value="evenementiel">Logistique événementielle</option>
+                                <option value="photo">Photographie</option>
+                                <option value="global">Pack global</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Décrivez votre projet..." rows="6" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent"></textarea>
+
+                        <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+                            <p class="text-sm text-gray-500">Réponse moyenne sous 24 heures ouvrées.</p>
+                            <button type="submit" class="bg-synergie-primary hover:bg-synergie-secondary text-white font-semibold py-3.5 px-7 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
                                 Envoyer le message
                             </button>
                         </div>
                     </form>
-                </div>
-
-                <!-- Informations -->
-                <div class="space-y-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-xl">
-                        <h3 class="text-2xl font-bold text-synergie-secondary mb-6">Nos Coordonnées</h3>
-                        <div class="space-y-6">
-                            <!-- Adresse -->
-                            <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-xl text-synergie-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-synergie-secondary">Adresse</h4>
-                                    <p class="text-gray-600">Lubumbashi, République Démocratique du Congo</p>
-                                </div>
-                            </div>
-
-                            <!-- Téléphone -->
-                            <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-phone text-xl text-synergie-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-synergie-secondary">Téléphone</h4>
-                                    <p class="text-gray-600">+243 83 424 90 25 </p>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-envelope text-xl text-synergie-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-synergie-secondary">Email</h4>
-                                    <p class="text-gray-600">synergieup@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <!-- Horaires -->
-                            <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-synergie-light rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-clock text-xl text-synergie-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-synergie-secondary">Horaires</h4>
-                                    <p class="text-gray-600">Lun - Ven : 8h - 18h<br>Samedi : 9h - 13h</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Carte -->
-                    <div class="bg-white p-8 rounded-2xl shadow-xl">
-                        <h3 class="text-2xl font-bold text-synergie-secondary mb-6">Nous trouver</h3>
-                        <div class="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-map-marked-alt text-4xl text-synergie-primary mb-4"></i>
-                                <p class="text-gray-600">Carte interactive</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-synergie-secondary text-white py-12">
+    <footer id="mainFooter" class="text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Logo et description -->
@@ -746,17 +1018,17 @@
                         Votre partenaire de confiance pour des solutions de communication et d'événementiel innovantes.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/Synergieupofficiel" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                        <a href="https://web.facebook.com/Synergieupofficiel" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://www.instagram.com/synergie_up?fbclid=IwY2xjawQD381leHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeG5-eC2wcHja6rKZcY_ja295A0it0tChtj9GOURnfv4RdWdgeIhXbuDW7nBg_aem_k20NCyaLGwOIZTrGnfXCPw" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                        <a href="https://www.instagram.com/synergie_up?fbclid=IwY2xjawQD381leHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeG5-eC2wcHja6rKZcY_ja295A0it0tChtj9GOURnfv4RdWdgeIhXbuDW7nBg_aem_k20NCyaLGwOIZTrGnfXCPw" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                        <a href="#" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.tiktok.com/@synergie.up?is_from_webapp=1&sender_device=pc" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-synergie-accent transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
@@ -818,6 +1090,9 @@
         // Menu mobile
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
+        const navbar = document.getElementById('navbar');
+        const desktopNavLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
@@ -899,14 +1174,42 @@
         // Update current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Navbar background on scroll
-        const navbar = document.getElementById('navbar');
+        // Navbar glass effect + active link on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('navbar-base');
+                navbar.classList.add('navbar-scrolled');
+                desktopNavLinks.forEach(link => {
+                    if (!link.classList.contains('is-active')) {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-synergie-secondary');
+                    }
+                });
             } else {
-                navbar.classList.remove('shadow-xl');
+                navbar.classList.remove('navbar-scrolled');
+                navbar.classList.add('navbar-base');
+                desktopNavLinks.forEach(link => {
+                    if (!link.classList.contains('is-active')) {
+                        link.classList.remove('text-synergie-secondary');
+                        link.classList.add('text-white');
+                    }
+                });
             }
+
+            let currentId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 140;
+                if (window.scrollY >= sectionTop) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            desktopNavLinks.forEach(link => {
+                link.classList.remove('is-active');
+                if (link.getAttribute('href') === `#${currentId}`) {
+                    link.classList.add('is-active');
+                }
+            });
         });
 
         // Smooth scroll for anchor links
