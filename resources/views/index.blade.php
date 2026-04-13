@@ -489,7 +489,7 @@
                 </div>
             </div>
 
-            
+
         </div>
     </section>
 
@@ -894,7 +894,7 @@
                     Nos <span class="text-synergie-primary">partenaires</span>
                 </h2>
                 <div class="section-indicator mx-auto mb-8"></div>
-                
+
             </div>
                 <div class="partners-marquee">
                     <div class="partners-track">
@@ -904,7 +904,7 @@
                         <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
                             <img src="{{ asset('assets/imgs/logo-nj-event.jpg') }}" alt="Logo NJ Event" class="h-28 w-auto object-contain">
                         </div>
-                        
+
                         <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
                             <img src="{{ asset('assets/imgs/logo-katanga-award.jpg') }}" alt="Logo Katanga Award" class="h-28 w-auto object-contain">
                         </div>
@@ -917,7 +917,7 @@
                         <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
                             <img src="{{ asset('assets/imgs/logo-nj-event.jpg') }}" alt="Logo NJ Event" class="h-28 w-auto object-contain">
                         </div>
-                        
+
                         <div class="partner-pill bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center">
                             <img src="{{ asset('assets/imgs/logo-katanga-award.jpg') }}" alt="Logo Katanga Award" class="h-28 w-auto object-contain">
                         </div>
@@ -927,7 +927,7 @@
                     </div>
                 </div>
 
-       
+
    </div>
             </section>
     <!-- Contact -->
@@ -971,14 +971,15 @@
 
                 <div class="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
                     <h3 class="text-2xl font-bold text-synergie-secondary mb-6">Envoyez-nous un message</h3>
-                    <form id="contactForm" class="space-y-5">
+                    <form id="contactForm" method="POST" action="{{ route('contact.store') }}" class="space-y-5">
+                        @csrf
                         <div class="grid md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Votre nom complet" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
-                            <input type="email" placeholder="Votre adresse email" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <input type="text" name="nom_complet" placeholder="Votre nom complet" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <input type="email" name="email" placeholder="Votre adresse email" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
                         </div>
                         <div class="grid md:grid-cols-2 gap-4">
-                            <input type="tel" placeholder="Votre numéro de téléphone" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
-                            <select class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
+                            <select name="service" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent">
                                 <option value="" selected disabled>Type de service</option>
                                 <option value="communication">Communication visuelle</option>
                                 <option value="developpement">Développement d'applications</option>
@@ -987,7 +988,7 @@
                                 <option value="global">Pack global</option>
                             </select>
                         </div>
-                        <textarea placeholder="Décrivez votre projet..." rows="6" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent"></textarea>
+                        <textarea name="message" placeholder="Décrivez votre projet..." rows="6" class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-synergie-primary/60 focus:border-transparent"></textarea>
 
                         <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
                             <p class="text-sm text-gray-500">Réponse moyenne sous 24 heures ouvrées.</p>
