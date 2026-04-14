@@ -1037,6 +1037,26 @@
         </div>
     </section>
 
+    <div id="contactSuccessModal" class="fixed inset-0 z-[999] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/55"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-7 text-center">
+            <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-synergie-secondary mb-2">Message envoye</h3>
+            <p class="text-gray-600 mb-6">Merci pour votre confiance. Suivez-nous aussi sur nos reseaux pour voir nos dernieres realisations.</p>
+            <div class="flex justify-center gap-3 mb-6">
+                <a href="https://web.facebook.com/Synergieupofficiel" target="_blank" class="w-10 h-10 rounded-full bg-synergie-secondary text-white flex items-center justify-center hover:bg-synergie-primary transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/synergie_up" target="_blank" class="w-10 h-10 rounded-full bg-synergie-secondary text-white flex items-center justify-center hover:bg-synergie-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@synergie.up?is_from_webapp=1&sender_device=pc" target="_blank" class="w-10 h-10 rounded-full bg-synergie-secondary text-white flex items-center justify-center hover:bg-synergie-primary transition-colors"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-synergie-secondary text-white flex items-center justify-center hover:bg-synergie-primary transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <button id="closeSuccessModal" class="w-full bg-synergie-primary text-white font-semibold py-2.5 rounded-lg hover:bg-synergie-secondary transition-colors">
+                Fermer
+            </button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer id="mainFooter" class="text-white py-12">
         <div class="container mx-auto px-4">
@@ -1181,11 +1201,32 @@
 
         // Formulaire de contact
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci pour votre message ! Nous vous contacterons sous peu.');
-            contactForm.reset();
-        });
+        const contactSuccessModal = document.getElementById('contactSuccessModal');
+        const closeSuccessModal = document.getElementById('closeSuccessModal');
+
+        @if(session('success'))
+            contactSuccessModal.classList.remove('hidden');
+            contactSuccessModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        @endif
+
+        if (closeSuccessModal) {
+            closeSuccessModal.addEventListener('click', () => {
+                contactSuccessModal.classList.add('hidden');
+                contactSuccessModal.classList.remove('flex');
+                document.body.style.overflow = '';
+            });
+        }
+
+        if (contactSuccessModal) {
+            contactSuccessModal.addEventListener('click', (e) => {
+                if (e.target === contactSuccessModal) {
+                    contactSuccessModal.classList.add('hidden');
+                    contactSuccessModal.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
 
         // Back to top button
         const backToTop = document.getElementById('backToTop');

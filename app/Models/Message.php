@@ -10,7 +10,8 @@ class Message extends Model
         'nom_complet',
         'email',
         'telephone',
-        'service',
+        'type_service',
         'message',
+        'is_read',
     ];
 }

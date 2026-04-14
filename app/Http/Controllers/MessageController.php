@@ -12,7 +12,15 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Message::query()
+            ->orderBy('is_read')
+            ->latest()
+            ->paginate(15);
+
+        $selectedMessageId = request()->integer('message');
+        $selectedMessage = $messages->firstWhere('id', $selectedMessageId) ?? $messages->first();
+
+        return view('admin.messages.index', compact('messages', 'selectedMessage'));
     }
 
     /**
@@ -28,7 +36,6 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        // Validation
         $request->validate([
             'nom_complet' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -37,13 +44,13 @@ class MessageController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Enregistrement
         Message::create([
             'nom_complet' => $request->nom_complet,
             'email' => $request->email,
             'telephone' => $request->telephone,
-            'service' => $request->service,
+            'type_service' => $request->service,
             'message' => $request->message,
+            'is_read' => false,
         ]);
 
         return back()->with('success', 'Message envoyé avec succès !');
@@ -78,6 +85,17 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        //
+        $message->delete();
+
+        return back()->with('success', 'Message supprimé.');
+    }
+
+    public function toggleRead(Message $message)
+    {
+        $message->update([
+            'is_read' => ! $message->is_read,
+        ]);
+
+        return back()->with('success', 'Statut du message mis à jour.');
     }
 }
