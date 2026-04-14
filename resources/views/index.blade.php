@@ -95,39 +95,74 @@
 
         .nav-link {
             position: relative;
-            padding-bottom: 0.2rem;
+            padding: 0.45rem 1rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+            transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
         }
 
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 2px;
-            border-radius: 999px;
-            background: var(--couleur3);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.25s ease;
+        .navbar-base .nav-link:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(241, 188, 84, 0.45);
         }
 
-        .nav-link:hover::after,
-        .nav-link.is-active::after {
-            transform: scaleX(1);
-        }
-
-        .nav-link.is-active {
+        .navbar-base .nav-link.is-active {
+            background: linear-gradient(
+                135deg,
+                rgba(241, 188, 84, 0.38) 0%,
+                rgba(255, 255, 255, 0.12) 100%
+            );
+            border-color: rgba(241, 188, 84, 0.55);
             color: var(--couleur3) !important;
+            text-shadow: none;
+        }
+
+        .navbar-scrolled .nav-link:hover {
+            background: rgba(0, 74, 99, 0.08);
+            border-color: rgba(241, 188, 84, 0.42);
+        }
+
+        .navbar-scrolled .nav-link.is-active {
+            background: linear-gradient(
+                135deg,
+                rgba(241, 188, 84, 0.32) 0%,
+                rgba(0, 74, 99, 0.06) 100%
+            );
+            border-color: rgba(241, 188, 84, 0.55);
+            color: var(--couleur3) !important;
+            text-shadow: none;
         }
 
         .section-indicator {
-            width: 84px;
-            height: 6px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--couleur1), var(--couleur3));
-            box-shadow: 0 6px 14px rgba(0, 74, 99, 0.22);
+            width: min(280px, 75vw);
+            height: 44px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 14px;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 74, 99, 0.14) 0%,
+                rgba(241, 188, 84, 0.32) 48%,
+                rgba(0, 74, 99, 0.1) 100%
+            );
+            border: 1px solid rgba(0, 74, 99, 0.12);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.65),
+                0 10px 24px rgba(0, 74, 99, 0.12);
+        }
+
+        #services .section-indicator {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.14) 0%,
+                rgba(241, 188, 84, 0.38) 50%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 12px 28px rgba(0, 0, 0, 0.28);
         }
 
         .neo-card-light {
