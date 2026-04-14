@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inbox Admin | Synergie UP</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/imgs/synergie-up-logo.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,7 +29,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <button id="themeToggle" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-xl font-semibold">
-                    🌙
+                    <span aria-hidden="true"></span>
                 </button>
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
@@ -141,13 +142,15 @@
     <script>
         const root = document.documentElement;
         const toggleBtn = document.getElementById('themeToggle');
+        const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a1 1 0 0 0 0 18 9 9 0 1 1 0-18z"/></svg>';
+        const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
 
         function applyTheme(theme) {
             const isDark = theme === 'dark';
             root.classList.remove('dark', 'light');
             root.classList.add(isDark ? 'dark' : 'light');
             localStorage.setItem('admin_theme', isDark ? 'dark' : 'light');
-            toggleBtn.textContent = isDark ? '☀️' : '🌙';
+            toggleBtn.innerHTML = isDark ? sunIcon : moonIcon;
         }
 
         applyTheme(localStorage.getItem('admin_theme') || 'light');
