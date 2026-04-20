@@ -54,10 +54,17 @@
                     <p class="text-xs uppercase tracking-widest text-slate-400">Messages</p>
                     <h2 class="font-bold text-slate-800 dark:text-slate-100">Boite de reception</h2>
                 </div>
+                @php
+                    $activeMessageId = (int) request()->query('message', (int) ($selectedMessageId ?? 0));
+                @endphp
                 <div class="max-h-[70vh] overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800">
                     @forelse($messages as $message)
-                        <a href="{{ route('admin.messages.index', ['message' => $message->id]) }}"
-                           class="block p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors {{ optional($selectedMessage)->id === $message->id ? 'bg-slate-50 dark:bg-slate-800 border-l-4 border-amber-400' : '' }}">
+                        <a href="{{ route('admin.messages.index') }}?message={{ $message->id }}"
+                           data-message-id="{{ $message->id }}"
+                           class="message-item relative block p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors {{ (int) $activeMessageId === (int) $message->id ? 'bg-slate-50 dark:bg-slate-800' : '' }}">
+                            @if((int) $activeMessageId === (int) $message->id)
+                                <span class="absolute inset-y-1 left-0 w-1 rounded-r bg-amber-400"></span>
+                            @endif
                             <div class="flex items-start justify-between gap-2">
                                 <p class="font-semibold text-slate-800 dark:text-slate-100 truncate">{{ $message->nom_complet }}</p>
                                 @if(! $message->is_read)
@@ -154,6 +161,7 @@
         }
 
         applyTheme(localStorage.getItem('admin_theme') || 'light');
+
         toggleBtn.addEventListener('click', () => {
             applyTheme(root.classList.contains('dark') ? 'light' : 'dark');
         });

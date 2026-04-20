@@ -15,12 +15,21 @@ class MessageController extends Controller
         $messages = Message::query()
             ->orderBy('is_read')
             ->latest()
-            ->paginate(15);
+            ->paginate(15)
+            ->withQueryString();
 
-        $selectedMessageId = request()->integer('message');
-        $selectedMessage = $messages->firstWhere('id', $selectedMessageId) ?? $messages->first();
+        $requestedMessageId = (int) request()->query('message', 0);
+        $selectedMessage = $requestedMessageId > 0
+            ? Message::query()->find($requestedMessageId)
+            : null;
 
-        return view('admin.messages.index', compact('messages', 'selectedMessage'));
+        if ($selectedMessage === null) {
+            $selectedMessage = $messages->first();
+        }
+
+        $selectedMessageId = optional($selectedMessage)->id;
+
+        return view('admin.messages.index', compact('messages', 'selectedMessage', 'selectedMessageId'));
     }
 
     /**
