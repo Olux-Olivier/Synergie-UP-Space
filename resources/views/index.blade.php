@@ -842,83 +842,25 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Projet 1 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Événement Corporate"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Événement Corporate</h3>
-                            <p class="text-gray-200">Lancement de produit</p>
+                @forelse($realisations as $realisation)
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="{{ $realisation->image_url }}"
+                             alt="{{ $realisation->titre }}"
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">{{ $realisation->titre }}</h3>
+                                @if($realisation->sous_titre)
+                                    <p class="text-gray-200">{{ $realisation->sous_titre }}</p>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Projet 2 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Identité Visuelle"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Identité Visuelle</h3>
-                            <p class="text-gray-200">Rebranding complet</p>
-                        </div>
+                @empty
+                    <div class="col-span-full text-center text-gray-500 bg-white rounded-xl border border-gray-200 p-8">
+                        Aucune realisation publiee pour le moment.
                     </div>
-                </div>
-
-                <!-- Projet 3 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Conférence"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Conférence Annuelle</h3>
-                            <p class="text-gray-200">Gestion complète</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 4 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Campagne Digital"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Campagne Digital</h3>
-                            <p class="text-gray-200">Stratégie réseaux sociaux</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 5 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Mariage"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Événement Privé</h3>
-                            <p class="text-gray-200">Organisation de mariage</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projet 6 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-                         alt="Festival"
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h3 class="text-white text-xl font-bold">Festival Culturel</h3>
-                            <p class="text-gray-200">Logistique et production</p>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </section>
